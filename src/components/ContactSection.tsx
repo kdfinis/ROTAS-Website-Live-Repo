@@ -123,7 +123,7 @@ const ContactSection = () => {
           {/* Contact Form */}
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
             <h3 className="text-2xl font-medium text-navy-800 tracking-wider mb-6">
-              Schedule a Viewing
+              Schedule a Viewing or Send an Inquiry
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
