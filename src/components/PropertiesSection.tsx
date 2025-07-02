@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Home, Trees, Phone, MessageCircle, Grape } from 'lucide-react';
 
 const PropertiesSection = () => {
@@ -140,9 +141,12 @@ const PropertiesSection = () => {
 
                 {/* Actions */}
                 <div className="flex flex-col space-y-4">
-                  <button className="btn-estate w-full text-sm py-3">
+                  <Link 
+                    to={`/property/${property.id}`}
+                    className="btn-estate w-full text-sm py-3 text-center"
+                  >
                     VIEW DETAILS
-                  </button>
+                  </Link>
                   <div className="flex space-x-3">
                     <a
                       href="tel:+352621815753"
@@ -158,7 +162,7 @@ const PropertiesSection = () => {
                       className="flex-1 btn-outline-estate text-center text-sm py-2"
                     >
                       <MessageCircle size={14} className="inline mr-1" />
-                      Inquire
+                      WhatsApp
                     </a>
                   </div>
                 </div>
