@@ -19,4 +19,12 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  optimizeDeps: {
+    exclude: ['fsevents']
+  },
+  build: {
+    rollupOptions: {
+      external: ['fsevents']
+    }
+  }
 }));

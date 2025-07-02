@@ -62,7 +62,7 @@ const Navigation = () => {
               </a>
             ))}
             
-            {/* Contact Buttons */}
+            {/* Contact Button */}
             <div className="flex items-center space-x-4 ml-8">
               <a
                 href="tel:+352621815753"
@@ -75,15 +75,6 @@ const Navigation = () => {
               >
                 <Phone size={18} />
                 <span className="text-sm font-medium">Call</span>
-              </a>
-              <a
-                href="https://wa.me/352621815753"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-estate text-sm py-3 px-6 flex items-center space-x-2"
-              >
-                <MessageCircle size={16} />
-                <span>WhatsApp</span>
               </a>
             </div>
           </div>
@@ -122,15 +113,6 @@ const Navigation = () => {
                   >
                     <Phone size={18} />
                     <span>Call: +352 621 815 753</span>
-                  </a>
-                  <a
-                    href="https://wa.me/352621815753"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-estate text-center flex items-center justify-center space-x-2"
-                  >
-                    <MessageCircle size={16} />
-                    <span>WhatsApp</span>
                   </a>
                 </div>
               </div>

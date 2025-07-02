@@ -11,7 +11,7 @@ const PropertyDetail = () => {
   // Property data - in a real app this would come from an API
   const properties = [
     {
-      id: '1',
+      id: 'Lot1',
       title: "The Complete Estate",
       subtitle: "Villa & Olive Groves",
       price: "Private Sale",
@@ -36,7 +36,7 @@ const PropertyDetail = () => {
       ]
     },
     {
-      id: '2',
+      id: 'Lot2',
       title: "The Stone Villa",
       subtitle: "Main Residence",
       price: "Upon Inquiry",
@@ -60,7 +60,7 @@ const PropertyDetail = () => {
       ]
     },
     {
-      id: '3',
+      id: 'Lot3',
       title: "Heritage Grove",
       subtitle: "First Olive Orchard",
       price: "Upon Inquiry",
@@ -84,7 +84,7 @@ const PropertyDetail = () => {
       ]
     },
     {
-      id: '4',
+      id: 'Lot4',
       title: "Golden Grove",
       subtitle: "Second Olive Orchard",
       price: "Upon Inquiry",
@@ -108,7 +108,7 @@ const PropertyDetail = () => {
       ]
     },
     {
-      id: '5',
+      id: 'Lot5',
       title: "Future Vineyard",
       subtitle: "Development Parcel",
       price: "Coming Soon",

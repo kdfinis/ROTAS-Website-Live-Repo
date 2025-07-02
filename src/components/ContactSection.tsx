@@ -46,11 +46,11 @@ const ContactSection = () => {
       <div className="section-padding">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white tracking-wider mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-navy-800 tracking-wider mb-6">
             GET IN
             <span className="block text-gold font-medium">TOUCH</span>
           </h2>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto tracking-wide">
+          <p className="text-lg text-navy-800 max-w-3xl mx-auto tracking-wide">
             Ready to explore these exceptional properties? Contact us to schedule a private viewing or discuss investment opportunities.
           </p>
         </div>
@@ -59,7 +59,7 @@ const ContactSection = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-medium text-white tracking-wider mb-6">
+              <h3 className="text-2xl font-medium text-navy-800 tracking-wider mb-6">
                 Contact Information
               </h3>
               <div className="space-y-6">
@@ -68,9 +68,9 @@ const ContactSection = () => {
                     <Phone className="w-6 h-6 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-1">Phone</h4>
-                    <p className="text-white/80">+352 621 815 753 (Luxembourg)</p>
-                    <p className="text-white/80">+385 98 432 648 (Croatia)</p>
+                    <h4 className="text-navy-800 font-medium mb-1">Phone</h4>
+                    <p className="text-navy-800">+352 621 815 753 (Luxembourg)</p>
+                    <p className="text-navy-800">+385 98 432 648 (Croatia)</p>
                   </div>
                 </div>
 
@@ -79,10 +79,10 @@ const ContactSection = () => {
                     <Mail className="w-6 h-6 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-1">Email</h4>
+                    <h4 className="text-navy-800 font-medium mb-1">Email</h4>
                     <a 
                       href="mailto:karlodefinis@gmail.com"
-                      className="text-white/80 hover:text-gold transition-colors"
+                      className="text-navy-800 hover:text-gold transition-colors"
                     >
                       karlodefinis@gmail.com
                     </a>
@@ -94,12 +94,12 @@ const ContactSection = () => {
                     <MessageCircle className="w-6 h-6 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-1">WhatsApp</h4>
+                    <h4 className="text-navy-800 font-medium mb-1">WhatsApp</h4>
                     <a 
                       href="https://wa.me/352621815753"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/80 hover:text-gold transition-colors"
+                      className="text-navy-800 hover:text-gold transition-colors"
                     >
                       Click to chat instantly
                     </a>
@@ -111,48 +111,25 @@ const ContactSection = () => {
                     <MapPin className="w-6 h-6 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-1">Location</h4>
-                    <p className="text-white/80">Croatian Adriatic Coast</p>
-                    <p className="text-white/80 text-sm">Exact location provided upon inquiry</p>
+                    <h4 className="text-navy-800 font-medium mb-1">Location</h4>
+                    <p className="text-navy-800">Croatian Adriatic Coast</p>
+                    <p className="text-navy-800 text-sm">Exact location provided upon inquiry</p>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Quick Contact Buttons */}
-            <div className="space-y-4">
-              <h4 className="text-white font-medium tracking-wider">QUICK CONTACT</h4>
-              <div className="flex flex-col space-y-3">
-                <a
-                  href="https://wa.me/352621815753"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-luxury flex items-center justify-center"
-                >
-                  <MessageCircle size={18} className="mr-2" />
-                  Message on WhatsApp
-                </a>
-                <a
-                  href="tel:+352621815753"
-                  className="btn-outline-luxury flex items-center justify-center border-white text-white hover:bg-white hover:text-navy-800"
-                >
-                  <Phone size={18} className="mr-2" />
-                  Call Now
-                </a>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
-            <h3 className="text-2xl font-medium text-white tracking-wider mb-6">
+            <h3 className="text-2xl font-medium text-navy-800 tracking-wider mb-6">
               Schedule a Viewing
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-white/80 text-sm font-medium mb-2">
+                  <label htmlFor="name" className="block text-navy-800 text-sm font-medium mb-2">
                     Full Name *
                   </label>
                   <input
@@ -162,12 +139,12 @@ const ContactSection = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-navy-800 placeholder-navy-800 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-white/80 text-sm font-medium mb-2">
+                  <label htmlFor="email" className="block text-navy-800 text-sm font-medium mb-2">
                     Email Address *
                   </label>
                   <input
@@ -177,7 +154,7 @@ const ContactSection = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-navy-800 placeholder-navy-800 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -185,7 +162,7 @@ const ContactSection = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="phone" className="block text-white/80 text-sm font-medium mb-2">
+                  <label htmlFor="phone" className="block text-navy-800 text-sm font-medium mb-2">
                     Phone Number
                   </label>
                   <input
@@ -194,12 +171,12 @@ const ContactSection = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-navy-800 placeholder-navy-800 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
                     placeholder="+1 234 567 8900"
                   />
                 </div>
                 <div>
-                  <label htmlFor="preferredDate" className="block text-white/80 text-sm font-medium mb-2">
+                  <label htmlFor="preferredDate" className="block text-navy-800 text-sm font-medium mb-2">
                     Preferred Viewing Date
                   </label>
                   <input
@@ -208,14 +185,14 @@ const ContactSection = () => {
                     name="preferredDate"
                     value={formData.preferredDate}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-navy-800 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
                     min={new Date().toISOString().split('T')[0]}
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-white/80 text-sm font-medium mb-2">
+                <label htmlFor="message" className="block text-navy-800 text-sm font-medium mb-2">
                   Message
                 </label>
                 <textarea
@@ -224,7 +201,7 @@ const ContactSection = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-navy-800 placeholder-navy-800 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors resize-none"
                   placeholder="Tell us about your interest in the properties..."
                 />
               </div>
@@ -238,7 +215,7 @@ const ContactSection = () => {
               </button>
             </form>
 
-            <p className="text-white/60 text-sm mt-4 text-center">
+            <p className="text-navy-800 text-sm mt-4 text-center">
               We typically respond within 24 hours. For immediate assistance, please call or WhatsApp.
             </p>
           </div>

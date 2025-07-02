@@ -37,7 +37,7 @@ const HeroSection = () => {
           <div className="mb-8">
             <div className="text-readable inline-block">
               <p className="text-lg md:text-xl tracking-widest mb-4 animate-fade-in-up">
-                A PRIVATE ESTATE FOR SALE
+                A PRIVATE FAMILY ESTATE FOR SALE
               </p>
             </div>
           </div>
