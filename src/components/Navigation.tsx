@@ -31,8 +31,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-navy rounded-sm flex items-center justify-center gentle-sway">
-              <span className="text-cream font-bold text-xl">R</span>
+            <div className="w-12 h-12 bg-gold rounded-sm flex items-center justify-center gentle-sway">
+              <span className="text-stone-900 font-bold text-xl">R</span>
             </div>
             <div>
               <h1 className={`font-light text-2xl tracking-widest transition-colors duration-300 ${
@@ -54,7 +54,7 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className={`font-medium tracking-wider transition-colors duration-300 hover:text-navy ${
+                className={`font-medium tracking-wider transition-colors duration-300 hover:text-gold ${
                   isScrolled ? 'text-stone-700' : 'text-cream'
                 }`}
               >
@@ -108,7 +108,7 @@ const Navigation = () => {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="text-stone-700 font-medium tracking-wider py-2 hover:text-navy transition-colors"
+                    className="text-stone-700 font-medium tracking-wider py-2 hover:text-gold transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -118,7 +118,7 @@ const Navigation = () => {
                 <div className="flex flex-col space-y-4 pt-6 border-t border-stone-200">
                   <a
                     href="tel:+352621815753"
-                    className="flex items-center space-x-3 text-stone-700 hover:text-navy transition-colors"
+                    className="flex items-center space-x-3 text-stone-700 hover:text-gold transition-colors"
                   >
                     <Phone size={18} />
                     <span>Call: +352 621 815 753</span>

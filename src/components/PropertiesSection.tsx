@@ -9,7 +9,7 @@ const PropertiesSection = () => {
       title: "The Complete Estate",
       subtitle: "Villa & Olive Groves",
       price: "Private Sale",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       description: "The entire heritage estate featuring the stone villa and both centuries-old olive orchards. A once-in-a-lifetime opportunity to own a complete Mediterranean legacy.",
       features: ["Stone Villa", "Ancient Olive Groves", "Private Coastline", "Heritage Property"],
       type: "complete"
@@ -58,10 +58,10 @@ const PropertiesSection = () => {
 
   const getIcon = (type: string) => {
     switch (type) {
-      case 'villa': return <Home className="w-6 h-6 text-terracotta" />;
+      case 'villa': return <Home className="w-6 h-6 text-gold" />;
       case 'orchard': return <Trees className="w-6 h-6 text-olive" />;
       case 'future': return <Grape className="w-6 h-6 text-stone-600" />;
-      default: return <MapPin className="w-6 h-6 text-terracotta" />;
+      default: return <MapPin className="w-6 h-6 text-gold" />;
     }
   };
 
@@ -70,12 +70,12 @@ const PropertiesSection = () => {
       <div className="section-padding">
         {/* Header */}
         <div className="text-center mb-20">
-          <p className="text-terracotta tracking-widest text-sm mb-4 uppercase">
+          <p className="text-gold tracking-widest text-sm mb-4 uppercase">
             For Private Sale
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-stone-800 tracking-wider mb-8">
             A HERITAGE
-            <span className="block text-terracotta font-normal">COLLECTION</span>
+            <span className="block text-gold font-normal">COLLECTION</span>
           </h2>
           <p className="text-xl text-stone-600 max-w-4xl mx-auto tracking-wide leading-relaxed">
             Each parcel represents generations of Croatian heritage, 
@@ -104,7 +104,7 @@ const PropertiesSection = () => {
                   </div>
                 </div>
                 <div className="absolute top-4 right-4">
-                  <span className="bg-terracotta text-cream px-4 py-2 rounded-full text-sm font-medium tracking-wide">
+                  <span className="bg-gold text-stone-900 px-4 py-2 rounded-full text-sm font-medium tracking-wide">
                     {property.price}
                   </span>
                 </div>
@@ -117,7 +117,7 @@ const PropertiesSection = () => {
                   <h3 className="text-2xl font-medium text-stone-800 tracking-wide mb-2">
                     {property.title}
                   </h3>
-                  <p className="text-terracotta font-medium tracking-wider text-sm uppercase">
+                  <p className="text-gold font-medium tracking-wider text-sm uppercase">
                     {property.subtitle}
                   </p>
                 </div>

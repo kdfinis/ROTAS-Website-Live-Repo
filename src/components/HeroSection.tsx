@@ -13,16 +13,16 @@ const HeroSection = () => {
           loop
           playsInline
           className="w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          poster="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
         >
           <source
             src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761"
             type="video/mp4"
           />
-          {/* Fallback image - Croatian islands */}
+          {/* Fallback image - Croatian coastline */}
           <img
             src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-            alt="Croatian Islands Landscape"
+            alt="Croatian Coastline"
             className="w-full h-full object-cover"
           />
         </video>
@@ -44,7 +44,7 @@ const HeroSection = () => {
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-wider mb-8 animate-fade-in-up text-shadow-lg" style={{ animationDelay: '0.2s' }}>
             ROTAS
-            <span className="block text-navy font-normal mt-2 bg-cream/90 px-8 py-2 rounded-lg inline-block">ESTATE</span>
+            <span className="block text-gold font-normal mt-2 bg-cream/90 px-8 py-2 rounded-lg inline-block">ESTATE</span>
           </h1>
           
           <div className="text-readable max-w-4xl mx-auto mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>

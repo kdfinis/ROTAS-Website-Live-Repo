@@ -66,19 +66,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Rustic Mediterranean colors - Updated with navy blue instead of terracotta
-				navy: {
-					DEFAULT: '#1e3a8a',
-					50: '#eff6ff',
-					100: '#dbeafe',
-					200: '#bfdbfe',
-					300: '#93c5fd',
-					400: '#60a5fa',
-					500: '#3b82f6',
-					600: '#2563eb',
-					700: '#1d4ed8',
-					800: '#1e40af',
-					900: '#1e3a8a'
+				// Rustic Mediterranean colors - Updated with gold focus instead of navy
+				gold: {
+					DEFAULT: '#D4AF37',
+					50: '#FDF9E6',
+					100: '#FAF0BD',
+					200: '#F5E285',
+					300: '#F0D44D',
+					400: '#E8C547',
+					500: '#D4AF37',
+					600: '#B8962F',
+					700: '#9C7D27',
+					800: '#80641F',
+					900: '#644B17'
 				},
 				stone: {
 					DEFAULT: '#8B7355',
