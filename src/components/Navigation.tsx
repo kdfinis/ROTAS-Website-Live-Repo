@@ -16,46 +16,46 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Properties', href: '#properties' },
+    { label: 'Estate', href: '#estate' },
+    { label: 'Heritage', href: '#heritage' },
     { label: 'Contact', href: '#contact' },
   ];
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg py-4' 
+        ? 'bg-cream/95 backdrop-blur-md shadow-lg py-4 stone-texture' 
         : 'bg-transparent py-6'
     }`}>
       <div className="section-padding">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gold rounded-sm flex items-center justify-center">
-              <span className="text-white font-bold text-lg">R</span>
+          <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 bg-terracotta rounded-sm flex items-center justify-center gentle-sway">
+              <span className="text-cream font-bold text-xl">R</span>
             </div>
             <div>
-              <h1 className={`font-bold text-xl tracking-wider transition-colors duration-300 ${
-                isScrolled ? 'text-navy-800' : 'text-white'
+              <h1 className={`font-light text-2xl tracking-widest transition-colors duration-300 ${
+                isScrolled ? 'text-stone-800' : 'text-cream'
               }`}>
-                ROTAS ESTATE
+                ROTAS
               </h1>
-              <p className={`text-xs tracking-widest transition-colors duration-300 ${
-                isScrolled ? 'text-navy-600' : 'text-white/80'
+              <p className={`text-sm tracking-widest transition-colors duration-300 ${
+                isScrolled ? 'text-stone-600' : 'text-cream/80'
               }`}>
-                LUXURY PROPERTIES
+                ESTATE
               </p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-10">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className={`font-medium tracking-wide transition-colors duration-300 hover:text-gold ${
-                  isScrolled ? 'text-navy-700' : 'text-white'
+                className={`font-medium tracking-wider transition-colors duration-300 hover:text-terracotta ${
+                  isScrolled ? 'text-stone-700' : 'text-cream'
                 }`}
               >
                 {item.label}
@@ -66,10 +66,10 @@ const Navigation = () => {
             <div className="flex items-center space-x-4 ml-8">
               <a
                 href="tel:+352621815753"
-                className={`p-2 rounded-full transition-all duration-300 ${
+                className={`p-3 rounded-full transition-all duration-300 ${
                   isScrolled 
-                    ? 'bg-navy-100 text-navy-700 hover:bg-navy-200' 
-                    : 'bg-white/20 text-white hover:bg-white/30'
+                    ? 'bg-stone-100 text-stone-700 hover:bg-stone-200' 
+                    : 'bg-cream/20 text-cream hover:bg-cream/30'
                 }`}
               >
                 <Phone size={18} />
@@ -78,10 +78,10 @@ const Navigation = () => {
                 href="https://wa.me/352621815753"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-luxury text-sm py-2 px-6"
+                className="btn-estate text-sm py-3 px-6"
               >
                 <MessageCircle size={16} className="inline mr-2" />
-                WhatsApp
+                Inquire
               </a>
             </div>
           </div>
@@ -89,7 +89,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             className={`lg:hidden p-2 transition-colors duration-300 ${
-              isScrolled ? 'text-navy-700' : 'text-white'
+              isScrolled ? 'text-stone-700' : 'text-cream'
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -99,24 +99,24 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-xl animate-slide-down">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-cream shadow-xl animate-slide-down rustic-texture">
             <div className="section-padding py-6">
-              <div className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-6">
                 {navItems.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
-                    className="text-navy-700 font-medium tracking-wide py-2 hover:text-gold transition-colors"
+                    className="text-stone-700 font-medium tracking-wider py-2 hover:text-terracotta transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
                   </a>
                 ))}
                 
-                <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
+                <div className="flex flex-col space-y-4 pt-6 border-t border-stone-200">
                   <a
                     href="tel:+352621815753"
-                    className="flex items-center space-x-3 text-navy-700 hover:text-gold transition-colors"
+                    className="flex items-center space-x-3 text-stone-700 hover:text-terracotta transition-colors"
                   >
                     <Phone size={18} />
                     <span>+352 621 815 753</span>
@@ -125,7 +125,7 @@ const Navigation = () => {
                     href="https://wa.me/352621815753"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-luxury text-center"
+                    className="btn-estate text-center"
                   >
                     <MessageCircle size={16} className="inline mr-2" />
                     Contact via WhatsApp

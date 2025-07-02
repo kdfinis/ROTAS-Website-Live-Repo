@@ -4,65 +4,65 @@ import { Phone, Mail, MessageCircle, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-navy-900 text-white py-12">
+    <footer className="bg-stone-900 text-cream py-16 rustic-texture">
       <div className="section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Company Info */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Estate Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gold rounded-sm flex items-center justify-center">
-                <span className="text-white font-bold text-lg">R</span>
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="w-12 h-12 bg-terracotta rounded-sm flex items-center justify-center">
+                <span className="text-cream font-bold text-xl">R</span>
               </div>
               <div>
-                <h3 className="font-bold text-xl tracking-wider">ROTAS ESTATE</h3>
-                <p className="text-xs tracking-widest text-white/70">LUXURY PROPERTIES</p>
+                <h3 className="font-light text-2xl tracking-widest">ROTAS ESTATE</h3>
+                <p className="text-xs tracking-widest text-cream/70 uppercase">Croatian Heritage Property</p>
               </div>
             </div>
-            <p className="text-white/80 leading-relaxed mb-4 max-w-md">
-              Discover exceptional luxury estates and Mediterranean villas in the pristine landscapes of Croatia. 
-              Your gateway to exclusive Croatian real estate opportunities.
+            <p className="text-cream/80 leading-relaxed mb-6 max-w-lg text-lg">
+              A rare Mediterranean estate where centuries-old olive groves meet timeless stone architecture 
+              on Croatia's pristine Adriatic coast. This is not just property—it's heritage.
             </p>
             <div className="flex space-x-4">
               <a
                 href="https://wa.me/352621815753"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gold/20 p-2 rounded-lg hover:bg-gold/30 transition-colors"
+                className="bg-terracotta/20 p-3 rounded-lg hover:bg-terracotta/30 transition-colors border border-terracotta/30"
               >
-                <MessageCircle size={20} className="text-gold" />
+                <MessageCircle size={20} className="text-terracotta" />
               </a>
               <a
                 href="tel:+352621815753"
-                className="bg-gold/20 p-2 rounded-lg hover:bg-gold/30 transition-colors"
+                className="bg-terracotta/20 p-3 rounded-lg hover:bg-terracotta/30 transition-colors border border-terracotta/30"
               >
-                <Phone size={20} className="text-gold" />
+                <Phone size={20} className="text-terracotta" />
               </a>
               <a
                 href="mailto:karlodefinis@gmail.com"
-                className="bg-gold/20 p-2 rounded-lg hover:bg-gold/30 transition-colors"
+                className="bg-terracotta/20 p-3 rounded-lg hover:bg-terracotta/30 transition-colors border border-terracotta/30"
               >
-                <Mail size={20} className="text-gold" />
+                <Mail size={20} className="text-terracotta" />
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Estate Details */}
           <div>
-            <h4 className="font-semibold tracking-wider mb-4">QUICK LINKS</h4>
-            <ul className="space-y-2">
+            <h4 className="font-medium tracking-wider mb-6 text-terracotta uppercase">Estate</h4>
+            <ul className="space-y-3">
               <li>
-                <a href="#home" className="text-white/80 hover:text-gold transition-colors tracking-wide">
-                  Home
+                <a href="#estate" className="text-cream/80 hover:text-terracotta transition-colors tracking-wide">
+                  The Collection
                 </a>
               </li>
               <li>
-                <a href="#properties" className="text-white/80 hover:text-gold transition-colors tracking-wide">
-                  Properties
+                <a href="#heritage" className="text-cream/80 hover:text-terracotta transition-colors tracking-wide">
+                  Heritage
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-white/80 hover:text-gold transition-colors tracking-wide">
-                  Contact
+                <a href="#contact" className="text-cream/80 hover:text-terracotta transition-colors tracking-wide">
+                  Private Viewing
                 </a>
               </li>
             </ul>
@@ -70,47 +70,47 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold tracking-wider mb-4">CONTACT</h4>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start space-x-2">
-                <Phone size={16} className="text-gold mt-1 flex-shrink-0" />
+            <h4 className="font-medium tracking-wider mb-6 text-terracotta uppercase">Private Sale Inquiry</h4>
+            <div className="space-y-4 text-sm">
+              <div className="flex items-start space-x-3">
+                <Phone size={16} className="text-terracotta mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-white/80">+352 621 815 753</p>
-                  <p className="text-white/80">+385 98 432 648</p>
+                  <p className="text-cream/80">+352 621 815 753</p>
+                  <p className="text-cream/80">+385 98 432 648</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-2">
-                <Mail size={16} className="text-gold mt-1 flex-shrink-0" />
+              <div className="flex items-start space-x-3">
+                <Mail size={16} className="text-terracotta mt-1 flex-shrink-0" />
                 <a 
                   href="mailto:karlodefinis@gmail.com"
-                  className="text-white/80 hover:text-gold transition-colors"
+                  className="text-cream/80 hover:text-terracotta transition-colors"
                 >
                   karlodefinis@gmail.com
                 </a>
               </div>
-              <div className="flex items-start space-x-2">
-                <MapPin size={16} className="text-gold mt-1 flex-shrink-0" />
-                <p className="text-white/80">Croatian Adriatic Coast</p>
+              <div className="flex items-start space-x-3">
+                <MapPin size={16} className="text-terracotta mt-1 flex-shrink-0" />
+                <p className="text-cream/80">Croatian Adriatic Coast</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8">
+        <div className="border-t border-cream/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-white/60 text-sm tracking-wide">
-              © 2024 ROTAS ESTATE. All rights reserved.
+            <p className="text-cream/60 text-sm tracking-wide">
+              © 2024 ROTAS ESTATE. Private heritage property for sale.
             </p>
-            <div className="flex items-center space-x-6 text-sm">
-              <a href="#" className="text-white/60 hover:text-gold transition-colors tracking-wide">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-white/60 hover:text-gold transition-colors tracking-wide">
-                Terms of Service
-              </a>
-              <a href="#" className="text-white/60 hover:text-gold transition-colors tracking-wide">
+            <div className="flex items-center space-x-8 text-sm">
+              <a href="#" className="text-cream/60 hover:text-terracotta transition-colors tracking-wide">
                 Legal Documents
+              </a>
+              <a href="#" className="text-cream/60 hover:text-terracotta transition-colors tracking-wide">
+                Land Registry
+              </a>
+              <a href="#" className="text-cream/60 hover:text-terracotta transition-colors tracking-wide">
+                Heritage Status
               </a>
             </div>
           </div>
