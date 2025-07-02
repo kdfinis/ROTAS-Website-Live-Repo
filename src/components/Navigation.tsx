@@ -31,7 +31,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-terracotta rounded-sm flex items-center justify-center gentle-sway">
+            <div className="w-12 h-12 bg-navy rounded-sm flex items-center justify-center gentle-sway">
               <span className="text-cream font-bold text-xl">R</span>
             </div>
             <div>
@@ -54,7 +54,7 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className={`font-medium tracking-wider transition-colors duration-300 hover:text-terracotta ${
+                className={`font-medium tracking-wider transition-colors duration-300 hover:text-navy ${
                   isScrolled ? 'text-stone-700' : 'text-cream'
                 }`}
               >
@@ -66,22 +66,24 @@ const Navigation = () => {
             <div className="flex items-center space-x-4 ml-8">
               <a
                 href="tel:+352621815753"
-                className={`p-3 rounded-full transition-all duration-300 ${
+                className={`p-3 rounded-full transition-all duration-300 flex items-center space-x-2 ${
                   isScrolled 
                     ? 'bg-stone-100 text-stone-700 hover:bg-stone-200' 
                     : 'bg-cream/20 text-cream hover:bg-cream/30'
                 }`}
+                title="Call us"
               >
                 <Phone size={18} />
+                <span className="text-sm font-medium">Call</span>
               </a>
               <a
                 href="https://wa.me/352621815753"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-estate text-sm py-3 px-6"
+                className="btn-estate text-sm py-3 px-6 flex items-center space-x-2"
               >
-                <MessageCircle size={16} className="inline mr-2" />
-                Inquire
+                <MessageCircle size={16} />
+                <span>WhatsApp</span>
               </a>
             </div>
           </div>
@@ -106,7 +108,7 @@ const Navigation = () => {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="text-stone-700 font-medium tracking-wider py-2 hover:text-terracotta transition-colors"
+                    className="text-stone-700 font-medium tracking-wider py-2 hover:text-navy transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -116,19 +118,19 @@ const Navigation = () => {
                 <div className="flex flex-col space-y-4 pt-6 border-t border-stone-200">
                   <a
                     href="tel:+352621815753"
-                    className="flex items-center space-x-3 text-stone-700 hover:text-terracotta transition-colors"
+                    className="flex items-center space-x-3 text-stone-700 hover:text-navy transition-colors"
                   >
                     <Phone size={18} />
-                    <span>+352 621 815 753</span>
+                    <span>Call: +352 621 815 753</span>
                   </a>
                   <a
                     href="https://wa.me/352621815753"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-estate text-center"
+                    className="btn-estate text-center flex items-center justify-center space-x-2"
                   >
-                    <MessageCircle size={16} className="inline mr-2" />
-                    Contact via WhatsApp
+                    <MessageCircle size={16} />
+                    <span>WhatsApp</span>
                   </a>
                 </div>
               </div>

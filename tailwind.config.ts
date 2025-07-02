@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -67,19 +66,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Rustic Mediterranean colors
-				terracotta: {
-					DEFAULT: '#B85450',
-					50: '#F4EFEF',
-					100: '#E9DFDE',
-					200: '#D3BFBD',
-					300: '#BD9F9C',
-					400: '#A77F7B',
-					500: '#B85450',
-					600: '#9A4642',
-					700: '#7C3834',
-					800: '#5E2A26',
-					900: '#401C18'
+				// Rustic Mediterranean colors - Updated with navy blue instead of terracotta
+				navy: {
+					DEFAULT: '#1e3a8a',
+					50: '#eff6ff',
+					100: '#dbeafe',
+					200: '#bfdbfe',
+					300: '#93c5fd',
+					400: '#60a5fa',
+					500: '#3b82f6',
+					600: '#2563eb',
+					700: '#1d4ed8',
+					800: '#1e40af',
+					900: '#1e3a8a'
 				},
 				stone: {
 					DEFAULT: '#8B7355',
