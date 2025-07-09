@@ -69,11 +69,11 @@ const PropertyDetail = () => {
         "Renovation": "2021"
       },
       images: [
+        "/assets/images/villa/panoramic/lot1-panoramic-19.jpg",
         "/assets/images/villa/living-room/living-room-01.jpg",
         "/assets/images/villa/bedrooms-bathrooms/bedrooms-bathrooms-01.jpg",
         "/assets/images/villa/exterior/exterior-01.jpg",
-        "/assets/images/villa/poolside/poolside-01.jpg",
-        "/assets/images/villa/panoramic/panoramic-01.jpg"
+        "/assets/images/villa/poolside/poolside-01.jpg"
       ]
     },
     {

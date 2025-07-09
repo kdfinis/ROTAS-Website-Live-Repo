@@ -9,7 +9,7 @@ const PropertiesSection = () => {
       title: "The Stone Villa",
       subtitle: "Main Residence",
       price: "Upon Inquiry",
-      image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/assets/images/villa/panoramic/lot1-panoramic-19.jpg",
       description: "Traditional Croatian stone villa showcasing generations of Mediterranean craftsmanship, where every stone tells a story of island heritage.",
       features: ["6 Chambers", "Sea Vistas", "Stone Terraces", "Original Architecture"],
       type: "villa"
