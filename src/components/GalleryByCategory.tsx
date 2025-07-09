@@ -1,258 +1,244 @@
-import React, { useState, useEffect } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 const categories = [
   {
     name: 'Living Room',
     folder: '/assets/images/villa/living-room/',
     photos: [
-      'living-room-01.jpg',
-      'living-room-02.jpg',
-      'living-room-03.jpg',
-      'living-room-04.jpg',
-      'living-room-05.jpg',
-      'living-room-06.jpg',
-      'living-room-07.jpg',
+      'lot1-living-room-01.jpg',
+      'lot1-living-room-02.jpg',
+      'lot1-living-room-03.jpg',
+      'lot1-living-room-05.jpg',
+      'lot1-living-room-06.jpg',
+      'lot1-living-room-07.jpg',
     ],
   },
   {
     name: 'Bedrooms & Bathrooms',
     folder: '/assets/images/villa/bedrooms-bathrooms/',
     photos: [
-      'bedrooms-bathrooms-01.jpg',
-      'bedrooms-bathrooms-02.jpg',
-      'bedrooms-bathrooms-03.jpg',
-      'bedrooms-bathrooms-04.jpg',
-      'bedrooms-bathrooms-05.jpg',
-      'bedrooms-bathrooms-06.jpg',
-      'bedrooms-bathrooms-07.jpg',
-      'bedrooms-bathrooms-08.jpg',
-      'bedrooms-bathrooms-09.jpg',
-      'bedrooms-bathrooms-10.jpg',
-      'bedrooms-bathrooms-11.jpg',
+      'lot1-bedrooms-bathrooms-01.jpg',
+      'lot1-bedrooms-bathrooms-02.jpg',
+      'lot1-bedrooms-bathrooms-03.jpg',
+      'lot1-bedrooms-bathrooms-04.jpg',
+      'lot1-bedrooms-bathrooms-05.jpg',
+      'lot1-bedrooms-bathrooms-06.jpg',
+      'lot1-bedrooms-bathrooms-07.jpg',
+      'lot1-bedrooms-bathrooms-08.jpg',
+      'lot1-bedrooms-bathrooms-09.jpg',
     ],
   },
   {
     name: 'Exterior',
     folder: '/assets/images/villa/exterior/',
     photos: [
-      'exterior-01.jpg',
-      'exterior-02.jpg',
-      'exterior-03.jpg',
-      'exterior-04.jpg',
-      'exterior-05.jpg',
-      'exterior-06.jpg',
-      'exterior-07.jpg',
-      'exterior-08.jpg',
-      'exterior-09.jpg',
-      'exterior-10.jpg',
-      'exterior-11.jpg',
-      'exterior-12.jpg',
-      'exterior-13.jpg',
-      'exterior-14.jpg',
-      'exterior-15.jpg',
-      'exterior-16.jpg',
-      'exterior-17.jpg',
-      'exterior-18.jpg',
-      'exterior-19.jpg',
-      'exterior-20.jpg',
-      'exterior-21.jpg',
-      'exterior-22.jpg',
-      'exterior-23.jpg',
-      'exterior-24.jpg',
-      'exterior-25.jpg',
-      'exterior-26.jpg',
-      'exterior-27.jpg',
-      'exterior-28.jpg',
+      'lot1-exterior-01.jpg',
+      'lot1-exterior-02.jpg',
+      'lot1-exterior-03.jpg',
+      'lot1-exterior-04.jpg',
+      'lot1-exterior-05.jpg',
+      'lot1-exterior-06.jpg',
+      'lot1-exterior-07.jpg',
+      'lot1-exterior-08.jpg',
+      'lot1-exterior-09.jpg',
+      'lot1-exterior-12.jpg',
+      'lot1-exterior-13.jpg',
+      'lot1-exterior-14.jpg',
+      'lot1-exterior-15.jpg',
+      'lot1-exterior-16.jpg',
+      'lot1-exterior-17.jpg',
+      'lot1-exterior-18.jpg',
+      'lot1-exterior-19.jpg',
+      'lot1-exterior-20.jpg',
+      'lot1-exterior-21.jpg',
+      'lot1-exterior-22.jpg',
+      'lot1-exterior-23.jpg',
+      'lot1-exterior-24.jpg',
+      'lot1-exterior-25.jpg',
+      'lot1-exterior-28.jpg',
     ],
   },
   {
     name: 'Poolside',
     folder: '/assets/images/villa/poolside/',
     photos: [
-      'poolside-01.jpg',
-      'poolside-02.jpg',
+      'lot1-poolside-01.jpg',
+      'lot1-poolside-03.jpg',
+      'lot1-poolside-04.jpg',
+      'lot1-poolside-05.jpg',
+      'lot1-poolside-06.jpg',
+      'lot1-poolside-07.jpg',
+      'lot1-poolside-08.jpg',
     ],
   },
   {
     name: 'Panoramic',
     folder: '/assets/images/villa/panoramic/',
     photos: [
-      'panoramic-01.jpg',
-      'panoramic-02.jpg',
+      'lot1-panoramic-01.jpg',
+      'lot1-panoramic-02.jpg',
+      'lot1-panoramic-03.jpg',
+      'lot1-panoramic-04.jpg',
+      'lot1-panoramic-05.jpg',
+      'lot1-panoramic-06.jpg',
+      'lot1-panoramic-07.jpg',
+      'lot1-panoramic-08.jpg',
+      'lot1-panoramic-09.jpg',
+      'lot1-panoramic-10.jpg',
+      'lot1-panoramic-11.jpg',
+      'lot1-panoramic-12.jpg',
+      'lot1-panoramic-13.jpg',
+      'lot1-panoramic-14.jpg',
+      'lot1-panoramic-15.jpg',
+      'lot1-panoramic-16.jpg',
+      'lot1-panoramic-17.jpg',
+      'lot1-panoramic-18.jpg',
+      'lot1-panoramic-19.jpg',
+      'lot1-panoramic-20.jpg',
+      'lot1-panoramic-21.jpg',
+      'lot1-panoramic-22.jpg',
+      'lot1-panoramic-23.jpg',
+      'lot1-panoramic-24.jpg',
     ],
   },
 ];
 
 const GalleryByCategory: React.FC = () => {
-  const [openCategory, setOpenCategory] = useState<number | null>(null);
-  const [photoIndex, setPhotoIndex] = useState(0);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const [slideIdx, setSlideIdx] = useState(0);
 
-  const handleOpen = (catIdx: number) => {
-    setOpenCategory(catIdx);
-    setPhotoIndex(0);
-    setImageLoaded(false);
+  // Open modal at first image of category
+  const openModal = (catIdx: number) => {
+    window.history.pushState({ modal: true }, '');
+    setOpenIdx(catIdx);
+    setSlideIdx(0);
+  };
+  const closeModal = useCallback(() => {
+    setOpenIdx(null);
+    if (window.history.state && window.history.state.modal) window.history.back();
+  }, []);
+
+  // Next/Prev navigation
+  const prev = () => {
+    if (openIdx === null) return;
+    setSlideIdx((i) => (i === 0 ? categories[openIdx].photos.length - 1 : i - 1));
+  };
+  const next = () => {
+    if (openIdx === null) return;
+    setSlideIdx((i) => (i === categories[openIdx].photos.length - 1 ? 0 : i + 1));
   };
 
-  const handleClose = () => {
-    setOpenCategory(null);
-    setPhotoIndex(0);
-    setImageLoaded(false);
-  };
-
-  const handlePrev = () => {
-    if (openCategory === null) return;
-    setImageLoaded(false);
-    setPhotoIndex((prev) =>
-      prev === 0 ? categories[openCategory].photos.length - 1 : prev - 1
-    );
-  };
-
-  const handleNext = () => {
-    if (openCategory === null) return;
-    setImageLoaded(false);
-    setPhotoIndex((prev) =>
-      prev === categories[openCategory].photos.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  // Keyboard navigation
+  // Escape and Back closes modal
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (openCategory === null) return;
-      
-      switch (event.key) {
-        case 'ArrowLeft':
-          event.preventDefault();
-          handlePrev();
-          break;
-        case 'ArrowRight':
-          event.preventDefault();
-          handleNext();
-          break;
-        case 'Escape':
-          event.preventDefault();
-          handleClose();
-          break;
-      }
+    if (openIdx === null) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
     };
-
-    if (openCategory !== null) {
-      document.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
-    }
-
+    const onPopState = () => setOpenIdx(null);
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('popstate', onPopState);
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('popstate', onPopState);
     };
-  }, [openCategory, photoIndex]);
-
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
-
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    e.currentTarget.style.display = 'none';
-  };
+  }, [openIdx, closeModal]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {categories.map((cat, idx) => (
-        <div
+        <button
           key={cat.name}
-          className="relative h-64 rounded-lg overflow-hidden group cursor-pointer bg-stone-100 hover:bg-stone-200 transition shadow-lg"
-          onClick={() => handleOpen(idx)}
+          className="relative w-full rounded-2xl overflow-hidden group cursor-pointer bg-stone-100 hover:bg-stone-200 transition shadow-lg focus:outline-none"
+          style={{ aspectRatio: '3800/2412' }}
+          onClick={() => openModal(idx)}
+          aria-label={`Open ${cat.name} gallery`}
         >
           <img
             src={cat.folder + cat.photos[0]}
             alt={cat.name}
-            className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 fixed-property-image"
-            onError={handleImageError}
+            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300 rounded-2xl"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 to-transparent"></div>
           <div className="absolute bottom-4 left-0 w-full flex justify-center">
             <span className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-white drop-shadow-lg text-center px-2">
               {cat.name}
             </span>
           </div>
-        </div>
+        </button>
       ))}
 
-      {/* Slideshow Dialog */}
-      <Dialog open={openCategory !== null} onOpenChange={handleClose}>
-        <DialogContent className="max-w-4xl w-full h-[85vh] p-0 bg-black rounded-2xl shadow-2xl border-4 border-gold flex flex-col justify-center items-center relative overflow-hidden">
-          <DialogHeader className="absolute top-4 left-4 z-10">
-            <DialogTitle className="text-white text-2xl font-light tracking-wide flex items-center gap-2">
-              {openCategory !== null && categories[openCategory].name} <span className="text-gold">•</span> Photo {photoIndex + 1} of {openCategory !== null && categories[openCategory].photos.length}
-            </DialogTitle>
-          </DialogHeader>
-          <button
-            className="absolute top-4 right-4 z-10 text-white hover:bg-gold/20 p-2 rounded-full transition"
-            onClick={handleClose}
-            aria-label="Close"
+      {/* Modal Slideshow */}
+      {openIdx !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-white/95 flex flex-col items-center justify-center p-4 overflow-auto animate-fade-in"
+          onClick={closeModal}
+        >
+          <div
+            className="relative flex flex-col items-center w-full h-full max-w-[85vw] max-h-[85vh]"
+            onClick={e => e.stopPropagation()}
           >
-            <X className="h-7 w-7" />
-          </button>
-          
-          <div className="relative w-full h-full flex items-center justify-center px-4">
-            {openCategory !== null && (
-              <>
-                {!imageLoaded && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-gold text-lg">Loading...</div>
-                  </div>
-                )}
+            <button
+              onClick={closeModal}
+              className="absolute -top-12 right-0 text-5xl text-gold hover:text-stone-700 transition font-bold z-50 bg-white/90 rounded-full px-5 py-2 shadow-lg border-2 border-gold"
+              aria-label="Close gallery"
+            >
+              ×
+            </button>
+            <div className="relative w-full h-full flex items-center justify-center">
+              {/* Left Arrow */}
+              <button
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-gold hover:text-stone-700 bg-white/80 rounded-full p-2 shadow z-20"
+                onClick={prev}
+                aria-label="Previous"
+              >
+                <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </button>
+              
+              {/* Image Container - Fixed 85% of screen */}
+              <div 
+                className="relative w-full h-full bg-stone-100 rounded-xl shadow-lg border border-gold/30 overflow-hidden"
+                style={{ 
+                  width: '85vw', 
+                  height: '85vh',
+                  maxWidth: '1400px',
+                  maxHeight: '900px',
+                  boxShadow: '0 4px 32px 0 rgba(0,0,0,0.10)'
+                }}
+              >
                 <img
-                  src={categories[openCategory].folder + categories[openCategory].photos[photoIndex]}
-                  alt={categories[openCategory].name + ' photo'}
-                  className={`max-w-full max-h-[70vh] object-contain rounded-xl shadow-lg border border-gold/30 transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                  onLoad={handleImageLoad}
-                  onError={handleImageError}
+                  src={categories[openIdx].folder + categories[openIdx].photos[slideIdx]}
+                  alt={categories[openIdx].name + ' photo'}
+                  className="w-full h-full object-cover cursor-pointer transition-all duration-150"
+                  onClick={next}
                 />
-              </>
-            )}
-            
-            <button
-              className="absolute left-4 text-gold bg-black/50 hover:bg-gold/30 p-3 rounded-full shadow transition backdrop-blur-sm"
-              onClick={handlePrev}
-              aria-label="Previous"
-            >
-              <ChevronLeft className="h-8 w-8" />
-            </button>
-            <button
-              className="absolute right-4 text-gold bg-black/50 hover:bg-gold/30 p-3 rounded-full shadow transition backdrop-blur-sm"
-              onClick={handleNext}
-              aria-label="Next"
-            >
-              <ChevronRight className="h-8 w-8" />
-            </button>
-          </div>
-          
-          {/* Thumbnails */}
-          {openCategory !== null && (
-            <div className="flex gap-2 mt-4 overflow-x-auto px-4 pb-4 max-w-full">
-              {categories[openCategory].photos.map((photo, i) => (
+              </div>
+              
+              {/* Right Arrow */}
+              <button
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-gold hover:text-stone-700 bg-white/80 rounded-full p-2 shadow z-20"
+                onClick={next}
+                aria-label="Next"
+              >
+                <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </button>
+            </div>
+            <div className="flex gap-2 mt-4 mb-4 px-2 pb-2 max-w-full w-full justify-center overflow-x-auto">
+              {categories[openIdx].photos.map((photo, i) => (
                 <img
                   key={i}
-                  src={categories[openCategory].folder + photo}
+                  src={categories[openIdx].folder + photo}
                   alt={`Thumbnail ${i + 1}`}
-                  className={`w-16 h-16 object-cover rounded border-2 transition-all duration-200 cursor-pointer flex-shrink-0 ${i === photoIndex ? 'border-gold scale-105' : 'border-white/30 opacity-70 hover:opacity-100'}`}
-                  onClick={() => {
-                    setPhotoIndex(i);
-                    setImageLoaded(false);
-                  }}
-                  onError={handleImageError}
+                  className={`w-12 h-12 object-cover rounded border-2 transition-all duration-200 cursor-pointer flex-shrink-0 ${i === slideIdx ? 'border-gold scale-105' : 'border-stone-200 opacity-70 hover:opacity-100'}`}
+                  onClick={() => setSlideIdx(i)}
                 />
               ))}
             </div>
-          )}
-        </DialogContent>
-      </Dialog>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default GalleryByCategory; 
+export default GalleryByCategory;

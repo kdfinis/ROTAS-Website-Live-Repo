@@ -184,14 +184,6 @@ const PropertiesSection = () => {
               <a href="#contact" className="btn-estate text-lg py-4 px-10">
                 ARRANGE VIEWING
               </a>
-              <a 
-                href="https://wa.me/352621815753"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline-estate text-lg py-4 px-10"
-              >
-                PRIVATE INQUIRY
-              </a>
             </div>
           </div>
         </div>

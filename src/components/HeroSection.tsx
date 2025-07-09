@@ -57,9 +57,6 @@ const HeroSection = () => {
             <a href="#estate" className="btn-estate text-lg py-4 px-10">
               DISCOVER THE ESTATE
             </a>
-            <a href="#contact" className="btn-outline-estate bg-cream/10 backdrop-blur-sm text-lg py-4 px-10">
-              INQUIRE NOW
-            </a>
           </div>
         </div>
       </div>

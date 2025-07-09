@@ -188,9 +188,7 @@ const PropertyDetail = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent"></div>
         
         {/* Property Badge */}
-        <div className="absolute top-8 right-8 bg-gold text-stone-900 px-6 py-3 rounded-full font-medium tracking-wide">
-          {property.price}
-        </div>
+        
         
         {/* Title Overlay */}
         <div className="absolute bottom-8 left-0 w-full flex justify-center lg:justify-start">
@@ -261,20 +259,11 @@ const PropertyDetail = () => {
                 <h3 className="text-2xl font-light text-stone-800 tracking-wide mb-6">
                   Gallery
                 </h3>
-                {property.id === 'lot-1' ? (
+                {(property.id === 'lot-1' || property.id === 'lot-3') ? (
                   <GalleryByCategory />
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {property.images.slice(1).map((image, index) => (
-                      <div key={index} className="relative h-64 rounded-lg overflow-hidden group">
-                        <img
-                          src={image}
-                          alt={`${property.title} view ${index + 1}`}
-                          className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 fixed-property-image"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-stone-900/20 to-transparent"></div>
-                      </div>
-                    ))}
+                  <div className="flex flex-col items-center justify-center min-h-[200px] bg-stone-100 rounded-xl border border-stone-200 p-8 text-stone-400 text-xl font-light">
+                    Gallery coming soon for this land plot.
                   </div>
                 )}
                 {/* Google Map View */}
@@ -307,45 +296,7 @@ const PropertyDetail = () => {
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-8 flex flex-col gap-8">
-                {/* Contact Card (now first) */}
-                <div className="bg-gold/10 rounded-lg p-8 border border-gold/20">
-                  <h4 className="text-xl font-medium text-stone-800 tracking-wide mb-6 text-center">
-                    Inquire About This Property
-                  </h4>
-                  <div className="flex flex-col gap-4">
-                    <a
-                      href="tel:+352621815753"
-                      className="w-full btn-estate flex items-center justify-center"
-                    >
-                      <Phone size={18} className="mr-2" />
-                      Call Now
-                    </a>
-                    <a
-                      href="https://wa.me/352621815753"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full btn-outline-estate flex items-center justify-center"
-                    >
-                      <MessageCircle size={18} className="mr-2" />
-                      WhatsApp Inquiry
-                    </a>
-                    <a
-                      href={`/docs/${property.id}-documentation.pdf`}
-                      className="w-full btn-estate flex items-center justify-center"
-                      download
-                      aria-label="Lot Documentation Download"
-                    >
-                      <Download size={18} className="mr-2" />
-                      Documentation
-                    </a>
-                  </div>
-                  <div className="mt-6 pt-6 border-t border-stone-200 text-center">
-                    <p className="text-stone-600 text-sm tracking-wide">
-                      Available for private viewing by appointment
-                    </p>
-                  </div>
-                </div>
-                {/* Property Info Card (now second) */}
+                {/* Property Info Card */}
                 <div className="bg-stone-50 rounded-lg p-8 border border-stone-200">
                   <div className="flex items-center mb-6">
                     <MapPin className="w-5 h-5 text-gold mr-2" />
