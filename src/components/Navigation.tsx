@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,23 +30,23 @@ const Navigation = () => {
       <div className="section-padding">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-4">
+          <Link to="/" className="flex items-center space-x-4 group" aria-label="Go to home page">
             <div className="w-12 h-12 bg-gold rounded-sm flex items-center justify-center gentle-sway">
               <span className="text-stone-900 font-bold text-xl">R</span>
             </div>
             <div>
               <h1 className={`font-light text-2xl tracking-widest transition-colors duration-300 ${
                 isScrolled ? 'text-stone-800' : 'text-cream'
-              }`}>
+              } group-hover:text-gold`}>
                 ROTAS
               </h1>
               <p className={`text-sm tracking-widest transition-colors duration-300 ${
                 isScrolled ? 'text-stone-600' : 'text-cream/80'
-              }`}>
+              } group-hover:text-gold`}>
                 ESTATE
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-10">
@@ -61,22 +61,6 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            
-            {/* Contact Button */}
-            <div className="flex items-center space-x-4 ml-8">
-              <a
-                href="tel:+352621815753"
-                className={`p-3 rounded-full transition-all duration-300 flex items-center space-x-2 ${
-                  isScrolled 
-                    ? 'bg-stone-100 text-stone-700 hover:bg-stone-200' 
-                    : 'bg-cream/20 text-cream hover:bg-cream/30'
-                }`}
-                title="Call us"
-              >
-                <Phone size={18} />
-                <span className="text-sm font-medium">Call</span>
-              </a>
-            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,16 +89,6 @@ const Navigation = () => {
                     {item.label}
                   </a>
                 ))}
-                
-                <div className="flex flex-col space-y-4 pt-6 border-t border-stone-200">
-                  <a
-                    href="tel:+352621815753"
-                    className="flex items-center space-x-3 text-stone-700 hover:text-gold transition-colors"
-                  >
-                    <Phone size={18} />
-                    <span>Call: +352 621 815 753</span>
-                  </a>
-                </div>
               </div>
             </div>
           </div>

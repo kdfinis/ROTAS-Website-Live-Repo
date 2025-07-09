@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -151,4 +150,35 @@
     radial-gradient(circle at 25% 25%, rgba(139, 115, 85, 0.1) 0%, transparent 25%),
     radial-gradient(circle at 75% 75%, rgba(139, 115, 85, 0.08) 0%, transparent 25%);
   pointer-events: none;
+}
+
+/* Gentle fade-up for hero text */
+@keyframes gentle-fade-up {
+  0% {
+    opacity: 0.3;
+    transform: translateY(56px);
+  }
+  40% {
+    opacity: 0.7;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.gentle-fade-up {
+  opacity: 0.3;
+  transform: translateY(56px);
+  animation: gentle-fade-up 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.fixed-property-image {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }

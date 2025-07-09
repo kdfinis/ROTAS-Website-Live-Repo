@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 
@@ -36,25 +35,25 @@ const HeroSection = () => {
         <div className="section-padding max-w-6xl">
           <div className="mb-8">
             <div className="text-readable inline-block">
-              <p className="text-lg md:text-xl tracking-widest mb-4 animate-fade-in-up">
+              <p className="text-lg md:text-xl tracking-widest mb-4 gentle-fade-up">
                 A PRIVATE FAMILY ESTATE FOR SALE
               </p>
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-wider mb-8 animate-fade-in-up text-shadow-lg" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-wider mb-8 gentle-fade-up text-shadow-lg">
             ROTAS
             <span className="block text-gold font-normal mt-2 bg-cream/90 px-8 py-2 rounded-lg inline-block">ESTATE</span>
           </h1>
           
-          <div className="text-readable max-w-4xl mx-auto mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="text-readable max-w-4xl mx-auto mb-12 gentle-fade-up">
             <p className="text-lg md:text-xl lg:text-2xl font-light tracking-wide opacity-90">
               A rare Mediterranean sanctuary where century-old olive groves meet 
               timeless architecture on the pristine Croatian coast
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 gentle-fade-up">
             <a href="#estate" className="btn-estate text-lg py-4 px-10">
               DISCOVER THE ESTATE
             </a>

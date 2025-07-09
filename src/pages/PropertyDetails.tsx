@@ -215,6 +215,10 @@ const PropertyDetails = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!property) {
     return (
       <div className="min-h-screen bg-cream flex items-center justify-center">
@@ -256,16 +260,6 @@ const PropertyDetails = () => {
     <div className="min-h-screen bg-cream">
       <Navigation />
       
-      {/* Back Button */}
-      <div className="fixed top-20 left-4 z-40">
-        <button
-          onClick={() => navigate('/')}
-          className="bg-cream/90 backdrop-blur-sm rounded-full p-3 border border-stone-200 hover:bg-cream transition-all duration-300 shadow-lg"
-        >
-          <ArrowLeft className="w-5 h-5 text-stone-800" />
-        </button>
-      </div>
-
       {/* Hero Media Section */}
       <section className="relative h-screen">
         <div className="absolute inset-0">
@@ -616,6 +610,22 @@ const PropertyDetails = () => {
           </div>
         </div>
       </section>
+
+      {/* Lot Documentation Download Box */}
+      <div className="bg-stone-50 rounded-lg p-8 border border-stone-200 mt-8">
+        <h4 className="text-xl font-medium text-stone-800 tracking-wide mb-4 text-center">
+          Lot Documentation Download
+        </h4>
+        <a
+          href={`/docs/lot-${property.id}-documentation.pdf`}
+          className="w-full btn-outline-estate flex items-center justify-center"
+          download
+          aria-label="Lot Documentation Download"
+        >
+          <Download size={18} className="mr-2" />
+          Documentation
+        </a>
+      </div>
 
       <Footer />
     </div>

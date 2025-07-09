@@ -1,22 +1,11 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Home, Trees, Phone, MessageCircle, Grape } from 'lucide-react';
+import { MapPin, Home, Trees, Phone, MessageCircle, Grape, Download } from 'lucide-react';
 
 const PropertiesSection = () => {
   const properties = [
     {
-      id: 'Lot1',
-      title: "The Complete Estate",
-      subtitle: "Villa & Olive Groves",
-      price: "Private Sale",
-      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "The entire heritage estate featuring the stone villa and both centuries-old olive orchards. A once-in-a-lifetime opportunity to own a complete Mediterranean legacy.",
-      features: ["Stone Villa", "Ancient Olive Groves", "Private Coastline", "Heritage Property"],
-      type: "complete"
-    },
-    {
-      id: 'Lot2', 
+      id: 'lot-1',
       title: "The Stone Villa",
       subtitle: "Main Residence",
       price: "Upon Inquiry",
@@ -26,14 +15,24 @@ const PropertiesSection = () => {
       type: "villa"
     },
     {
-      id: 'Lot3',
+      id: 'lot-2',
       title: "Heritage Grove",
       subtitle: "First Olive Orchard",
-      price: "Upon Inquiry", 
+      price: "Upon Inquiry",
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       description: "Ancient olive grove with trees planted by generations past, offering both agricultural heritage and investment potential in Croatia's golden landscape.",
       features: ["500+ Ancient Trees", "Organic Heritage", "Annual Harvest", "Development Rights"],
       type: "orchard"
+    },
+    {
+      id: 'lot-3',
+      title: "The Complete Estate",
+      subtitle: "Villa & Olive Groves",
+      price: "Private Sale",
+      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description: "The entire heritage estate featuring the stone villa and both centuries-old olive orchards. A once-in-a-lifetime opportunity to own a complete Mediterranean legacy.",
+      features: ["Stone Villa", "Ancient Olive Groves", "Private Coastline", "Heritage Property"],
+      type: "complete"
     },
     {
       id: 'Lot4',
@@ -93,11 +92,11 @@ const PropertiesSection = () => {
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Image */}
-              <div className="relative h-72 overflow-hidden">
+              <Link to={`/property/${property.id}`} className="relative h-72 w-full flex items-center justify-center overflow-hidden group/image">
                 <img
                   src={property.image}
                   alt={property.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                  className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110 fixed-property-image"
                 />
                 <div className="absolute top-4 left-4">
                   <div className="bg-cream/90 backdrop-blur-sm rounded-full p-3 border border-stone-200">
@@ -110,7 +109,7 @@ const PropertiesSection = () => {
                   </span>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/20 to-transparent"></div>
-              </div>
+              </Link>
 
               {/* Content */}
               <div className="p-8">
@@ -149,11 +148,11 @@ const PropertiesSection = () => {
                   </Link>
                   <div className="flex space-x-3">
                     <a
-                      href="tel:+352621815753"
-                      className="flex-1 btn-outline-estate text-center text-sm py-2"
+                      href="#"
+                      className="flex-1 btn-outline-estate text-center text-sm py-2 flex items-center justify-center"
                     >
-                      <Phone size={14} className="inline mr-1" />
-                      Call
+                      <Download size={14} className="inline mr-1" />
+                      Documentation
                     </a>
                     <a
                       href="https://wa.me/352621815753"
