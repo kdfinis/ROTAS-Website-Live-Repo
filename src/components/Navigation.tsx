@@ -29,8 +29,8 @@ const Navigation = () => {
     }`}>
       <div className="section-padding">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-4 group" aria-label="Go to home page">
+          {/* Logo - Expanded clickable area */}
+          <Link to="/" className="flex items-center space-x-4 group cursor-pointer" aria-label="Go to home page" style={{ minHeight: '48px', minWidth: '200px' }}>
             <div className="w-12 h-12 bg-gold rounded-sm flex items-center justify-center gentle-sway">
               <span className="text-stone-900 font-bold text-xl">R</span>
             </div>

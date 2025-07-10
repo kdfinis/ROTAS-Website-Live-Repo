@@ -8,8 +8,8 @@ const PropertiesSection = () => {
       id: 'lot-1',
       title: "The Stone Villa",
       subtitle: "Main Residence",
-      price: "Upon Inquiry",
-      image: "/assets/images/villa/panoramic/lot1-panoramic-19.jpg",
+      price: "€890,000 EUR",
+      image: "/assets/images/villa/panoramic/panoramic-19.jpg",
       description: "Traditional Croatian stone villa showcasing generations of Mediterranean craftsmanship, where every stone tells a story of island heritage.",
       features: ["6 Chambers", "Sea Vistas", "Stone Terraces", "Original Architecture"],
       type: "villa"
@@ -33,27 +33,8 @@ const PropertiesSection = () => {
       description: "The entire heritage estate featuring the stone villa and both centuries-old olive orchards. A once-in-a-lifetime opportunity to own a complete Mediterranean legacy.",
       features: ["Stone Villa", "Ancient Olive Groves", "Private Coastline", "Heritage Property"],
       type: "complete"
-    },
-    {
-      id: 'Lot4',
-      title: "Golden Grove", 
-      subtitle: "Second Olive Orchard",
-      price: "Upon Inquiry",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Second heritage olive grove with pristine ancient trees and fertile Mediterranean soil, perfect for continued cultivation or thoughtful development.",
-      features: ["400+ Heritage Trees", "Prime Terroir", "Natural Springs", "Flexible Heritage Use"],
-      type: "orchard"
-    },
-    {
-      id: 'Lot5',
-      title: "Future Vineyard",
-      subtitle: "Development Parcel", 
-      price: "Coming Soon",
-      image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Additional terraced land with vineyard potential, offering expansion opportunities for those who understand the value of Croatian terroir.",
-      features: ["Vineyard Potential", "Sea Access", "Heritage Planning", "Investment Grade"],
-      type: "future"
     }
+    // Room for more properties here
   ];
 
   const getIcon = (type: string) => {
@@ -103,7 +84,7 @@ const PropertiesSection = () => {
                     {getIcon(property.type)}
                   </div>
                 </div>
-                <div className="absolute top-4 right-4">
+                <div className="absolute bottom-4 right-4">
                   <span className="bg-gold text-stone-900 px-4 py-2 rounded-full text-sm font-medium tracking-wide">
                     {property.price}
                   </span>
@@ -170,22 +151,18 @@ const PropertiesSection = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center">
-          <div className="bg-cream rounded-lg p-12 shadow-lg max-w-5xl mx-auto border border-stone-200 stone-texture">
-            <h3 className="text-3xl font-light text-stone-800 tracking-wider mb-6">
-              Experience Croatian Heritage
-            </h3>
-            <p className="text-stone-600 mb-8 tracking-wide text-lg leading-relaxed max-w-3xl mx-auto">
-              Arrange a private viewing to walk among century-old olive trees 
-              and experience the timeless beauty of this Mediterranean estate.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <a href="#contact" className="btn-estate text-lg py-4 px-10">
-                ARRANGE VIEWING
-              </a>
-            </div>
-          </div>
+        {/* Night Panoramic Photo */}
+        <div className="w-full h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden shadow-2xl border border-stone-200">
+          <img
+            src="/assets/images/villa/panoramic/lot1-panoramic-03.jpg"
+            alt="Night view of the Croatian estate"
+            className="w-full h-full object-cover object-center"
+            onError={(e) => {
+              console.error('Image failed to load:', e.currentTarget.src);
+              e.currentTarget.style.display = 'none';
+            }}
+            onLoad={() => console.log('Image loaded successfully')}
+          />
         </div>
       </div>
     </section>

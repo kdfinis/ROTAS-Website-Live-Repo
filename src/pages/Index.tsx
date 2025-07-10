@@ -2,8 +2,8 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import PropertiesSection from "@/components/PropertiesSection";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   return (
@@ -11,7 +11,6 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <PropertiesSection />
-      <ContactSection />
       <Footer />
     </div>
   );
