@@ -31,33 +31,109 @@ export default {
     'Renovation': '2021'
   },
   images: [
-    // Strict naming: the-stone-villa-lot1-panoramic-19.jpg
-    '/assets/images/villa/panoramic/the-stone-villa-lot1-panoramic-19.jpg',
-    '/assets/images/villa/living-room/the-stone-villa-lot1-living-room-01.jpg',
-    '/assets/images/villa/bedrooms-bathrooms/the-stone-villa-lot1-bedrooms-bathrooms-01.jpg',
-    '/assets/images/villa/exterior/the-stone-villa-lot1-exterior-01.jpg',
-    '/assets/images/villa/poolside/the-stone-villa-lot1-poolside-01.jpg'
+    // Updated paths to match actual file names
+    '/assets/images/villa/panoramic/panoramic-19.jpg',
+    '/assets/images/villa/living-room/lot1-living-room-01.jpg',
+    '/assets/images/villa/bedrooms-bathrooms/lot1-bedrooms-bathrooms-01.jpg',
+    '/assets/images/villa/exterior/lot1-exterior-01.jpg',
+    '/assets/images/villa/poolside/lot1-poolside-01.jpg'
   ],
   gallery: {
     panoramic: {
       visible: true,
-      images: ['/assets/images/villa/panoramic/the-stone-villa-lot1-panoramic-19.jpg']
+      images: [
+        '/assets/images/villa/panoramic/panoramic-19.jpg',
+        '/assets/images/villa/panoramic/lot1-panoramic-01.jpg',
+        '/assets/images/villa/panoramic/lot1-panoramic-02.jpg',
+        '/assets/images/villa/panoramic/lot1-panoramic-03.jpg',
+        '/assets/images/villa/panoramic/lot1-panoramic-04.jpg',
+        '/assets/images/villa/panoramic/lot1-panoramic-05.jpg',
+        '/assets/images/villa/panoramic/lot1-panoramic-06.jpg',
+        '/assets/images/villa/panoramic/lot1-panoramic-07.jpg',
+        '/assets/images/villa/panoramic/lot1-panoramic-08.jpg',
+        '/assets/images/villa/panoramic/lot1-panoramic-09.jpg',
+        '/assets/images/villa/panoramic/panoramic-10.jpg',
+        '/assets/images/villa/panoramic/panoramic-11.jpg',
+        '/assets/images/villa/panoramic/panoramic-12.jpg',
+        '/assets/images/villa/panoramic/panoramic-13.jpg',
+        '/assets/images/villa/panoramic/panoramic-14.jpg',
+        '/assets/images/villa/panoramic/panoramic-15.jpg',
+        '/assets/images/villa/panoramic/panoramic-16.jpg',
+        '/assets/images/villa/panoramic/panoramic-17.jpg',
+        '/assets/images/villa/panoramic/panoramic-18.jpg',
+        '/assets/images/villa/panoramic/panoramic-20.jpg',
+        '/assets/images/villa/panoramic/panoramic-21.jpg',
+        '/assets/images/villa/panoramic/panoramic-22.jpg',
+        '/assets/images/villa/panoramic/panoramic-23.jpg',
+        '/assets/images/villa/panoramic/panoramic-24.jpg'
+      ]
     },
     livingRoom: {
       visible: true,
-      images: ['/assets/images/villa/living-room/the-stone-villa-lot1-living-room-01.jpg']
+      images: [
+        '/assets/images/villa/living-room/lot1-living-room-01.jpg',
+        '/assets/images/villa/living-room/lot1-living-room-02.jpg',
+        '/assets/images/villa/living-room/lot1-living-room-03.jpg',
+        '/assets/images/villa/living-room/lot1-living-room-05.jpg',
+        '/assets/images/villa/living-room/lot1-living-room-06.jpg',
+        '/assets/images/villa/living-room/lot1-living-room-07.jpg'
+      ]
     },
     bedrooms: {
       visible: true,
-      images: ['/assets/images/villa/bedrooms-bathrooms/the-stone-villa-lot1-bedrooms-bathrooms-01.jpg']
+      images: [
+        '/assets/images/villa/bedrooms-bathrooms/lot1-bedrooms-bathrooms-01.jpg',
+        '/assets/images/villa/bedrooms-bathrooms/lot1-bedrooms-bathrooms-02.jpg',
+        '/assets/images/villa/bedrooms-bathrooms/lot1-bedrooms-bathrooms-03.jpg',
+        '/assets/images/villa/bedrooms-bathrooms/lot1-bedrooms-bathrooms-04.jpg',
+        '/assets/images/villa/bedrooms-bathrooms/lot1-bedrooms-bathrooms-05.jpg',
+        '/assets/images/villa/bedrooms-bathrooms/lot1-bedrooms-bathrooms-06.jpg',
+        '/assets/images/villa/bedrooms-bathrooms/lot1-bedrooms-bathrooms-07.jpg',
+        '/assets/images/villa/bedrooms-bathrooms/lot1-bedrooms-bathrooms-08.jpg',
+        '/assets/images/villa/bedrooms-bathrooms/lot1-bedrooms-bathrooms-09.jpg'
+      ]
     },
     exterior: {
       visible: true,
-      images: ['/assets/images/villa/exterior/the-stone-villa-lot1-exterior-01.jpg']
+      images: [
+        '/assets/images/villa/exterior/lot1-exterior-01.jpg',
+        '/assets/images/villa/exterior/lot1-exterior-02.jpg',
+        '/assets/images/villa/exterior/lot1-exterior-03.jpg',
+        '/assets/images/villa/exterior/lot1-exterior-04.jpg',
+        '/assets/images/villa/exterior/lot1-exterior-05.jpg',
+        '/assets/images/villa/exterior/lot1-exterior-06.jpg',
+        '/assets/images/villa/exterior/lot1-exterior-07.jpg',
+        '/assets/images/villa/exterior/lot1-exterior-08.jpg',
+        '/assets/images/villa/exterior/lot1-exterior-09.jpg',
+        '/assets/images/villa/exterior/exterior-12.jpg',
+        '/assets/images/villa/exterior/exterior-13.jpg',
+        '/assets/images/villa/exterior/exterior-14.jpg',
+        '/assets/images/villa/exterior/exterior-15.jpg',
+        '/assets/images/villa/exterior/exterior-16.jpg',
+        '/assets/images/villa/exterior/exterior-17.jpg',
+        '/assets/images/villa/exterior/exterior-18.jpg',
+        '/assets/images/villa/exterior/exterior-19.jpg',
+        '/assets/images/villa/exterior/exterior-20.jpg',
+        '/assets/images/villa/exterior/exterior-21.jpg',
+        '/assets/images/villa/exterior/exterior-22.jpg',
+        '/assets/images/villa/exterior/exterior-23.jpg',
+        '/assets/images/villa/exterior/exterior-24.jpg',
+        '/assets/images/villa/exterior/exterior-25.jpg',
+        '/assets/images/villa/exterior/exterior-28.jpg'
+      ]
     },
     poolside: {
       visible: true,
-      images: ['/assets/images/villa/poolside/the-stone-villa-lot1-poolside-01.jpg']
+      images: [
+        '/assets/images/villa/poolside/lot1-poolside-01.jpg',
+        '/assets/images/villa/poolside/lot1-poolside-02.jpg',
+        '/assets/images/villa/poolside/lot1-poolside-03.jpg',
+        '/assets/images/villa/poolside/lot1-poolside-04.jpg',
+        '/assets/images/villa/poolside/lot1-poolside-05.jpg',
+        '/assets/images/villa/poolside/lot1-poolside-06.jpg',
+        '/assets/images/villa/poolside/lot1-poolside-07.jpg',
+        '/assets/images/villa/poolside/lot1-poolside-08.jpg'
+      ]
     }
   },
   documentation: [

@@ -19,7 +19,7 @@ const PropertiesSection = () => {
       title: "Heritage Grove",
       subtitle: "First Olive Orchard",
       price: "Upon Inquiry",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/placeholder.svg",
       description: "Ancient olive grove with trees planted by generations past, offering both agricultural heritage and investment potential in Croatia's golden landscape.",
       features: ["500+ Ancient Trees", "Organic Heritage", "Annual Harvest", "Development Rights"],
       type: "orchard"
@@ -29,7 +29,7 @@ const PropertiesSection = () => {
       title: "The Complete Estate",
       subtitle: "Villa & Olive Groves",
       price: "Private Sale",
-      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/placeholder.svg",
       description: "The entire heritage estate featuring the stone villa and both centuries-old olive orchards. A once-in-a-lifetime opportunity to own a complete Mediterranean legacy.",
       features: ["Stone Villa", "Ancient Olive Groves", "Private Coastline", "Heritage Property"],
       type: "complete"
@@ -78,6 +78,10 @@ const PropertiesSection = () => {
                   src={property.image}
                   alt={property.title}
                   className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110 fixed-property-image"
+                  onError={(e) => {
+                    console.error('Image failed to load:', e.currentTarget.src);
+                    e.currentTarget.src = '/placeholder.svg';
+                  }}
                 />
                 <div className="absolute top-4 left-4">
                   <div className="bg-cream/90 backdrop-blur-sm rounded-full p-3 border border-stone-200">
@@ -159,9 +163,8 @@ const PropertiesSection = () => {
             className="w-full h-full object-cover object-center"
             onError={(e) => {
               console.error('Image failed to load:', e.currentTarget.src);
-              e.currentTarget.style.display = 'none';
+              e.currentTarget.src = '/placeholder.svg';
             }}
-            onLoad={() => console.log('Image loaded successfully')}
           />
         </div>
       </div>

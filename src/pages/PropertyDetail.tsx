@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, MapPin, Home, Trees, Phone, MessageCircle, Grape, Calendar, Euro, Camera, Download } from 'lucide-react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import GalleryByCategory from '@/components/GalleryByCategory';
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
+import GalleryByCategory from "../components/GalleryByCategory";
 
 const PropertyDetail = () => {
   const { id } = useParams();
@@ -15,10 +15,35 @@ const PropertyDetail = () => {
   // Property data - in a real app this would come from an API
   const properties = [
     {
+      id: 'lot-3',
+      title: "The Complete Estate",
+      subtitle: "Villa & Olive Groves",
+      price: "Private Sale",
+      location: "Croatian Adriatic Coast",
+      type: "complete",
+      description: "The entire heritage estate featuring the stone villa and both centuries-old olive groves. A once-in-a-lifetime opportunity to own a complete Mediterranean legacy stretching across pristine coastline.",
+      longDescription: "This extraordinary estate represents the pinnacle of Mediterranean heritage ownership. Spanning across ancient terraced land, the property encompasses a traditional stone villa and two productive olive groves that have been cultivated for centuries. The villa showcases authentic Croatian craftsmanship with thick stone walls, traditional tile roofing, and panoramic sea views. Each olive tree tells a story of generations past, producing premium oil that embodies the essence of the Adriatic terroir.",
+      features: ["Stone Villa with 6 Chambers", "900+ Ancient Olive Trees", "Private Coastline Access", "Heritage Property Status", "Original Stone Terraces", "Natural Spring Water", "Sunset Sea Views", "Development Rights"],
+      specifications: {
+        "Total Area": "15,000 m²",
+        "Villa Size": "450 m²",
+        "Olive Groves": "2 Separate Orchards",
+        "Coastline": "150m Private Access",
+        "Built": "18th Century",
+        "Renovated": "2019"
+      },
+      images: [
+        "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ]
+    },
+    {
       id: 'lot-1',
       title: "The Stone Villa",
       subtitle: "Main Residence",
-      price: "€940,000 EUR",
+      price: "Upon Inquiry",
       location: "Croatian Adriatic Coast",
       type: "villa",
       description: "Traditional Croatian stone villa showcasing generations of Mediterranean craftsmanship, where every stone tells a story of island heritage.",
@@ -44,7 +69,7 @@ const PropertyDetail = () => {
         "Renovation": "2021"
       },
       images: [
-        "/assets/images/villa/panoramic/panoramic-19.jpg",
+        "/assets/images/villa/panoramic/lot1-panoramic-19.jpg",
         "/assets/images/villa/living-room/living-room-01.jpg",
         "/assets/images/villa/bedrooms-bathrooms/bedrooms-bathrooms-01.jpg",
         "/assets/images/villa/exterior/exterior-01.jpg",
@@ -76,31 +101,53 @@ const PropertyDetail = () => {
       ]
     },
     {
-      id: 'lot-3',
-      title: "The Complete Estate",
-      subtitle: "Villa & Olive Groves",
-      price: "Private Sale",
+      id: 'Lot4',
+      title: "Golden Grove",
+      subtitle: "Second Olive Orchard",
+      price: "Upon Inquiry",
       location: "Croatian Adriatic Coast",
-      type: "complete",
-      description: "The entire heritage estate featuring the stone villa and both centuries-old olive groves. A once-in-a-lifetime opportunity to own a complete Mediterranean legacy stretching across pristine coastline.",
-      longDescription: "This extraordinary estate represents the pinnacle of Mediterranean heritage ownership. Spanning across ancient terraced land, the property encompasses a traditional stone villa and two productive olive groves that have been cultivated for centuries. The villa showcases authentic Croatian craftsmanship with thick stone walls, traditional tile roofing, and panoramic sea views. Each olive tree tells a story of generations past, producing premium oil that embodies the essence of the Adriatic terroir.",
-      features: ["Stone Villa with 6 Chambers", "900+ Ancient Olive Trees", "Private Coastline Access", "Heritage Property Status", "Original Stone Terraces", "Natural Spring Water", "Sunset Sea Views", "Development Rights"],
+      type: "orchard",
+      description: "Second heritage olive grove with pristine ancient trees and fertile Mediterranean soil, perfect for continued cultivation or thoughtful development.",
+      longDescription: "The Golden Grove complements the Heritage Grove with an additional 400 centuries-old olive trees. This orchard benefits from natural spring water and optimal sun exposure, producing olives of exceptional quality. The grove offers flexibility for heritage continuation or tasteful development while maintaining the landscape's historical character.",
+      features: ["400+ Heritage Trees", "Prime Mediterranean Terroir", "Natural Springs", "Flexible Development Rights", "Optimal Sun Exposure", "Historical Significance"],
       specifications: {
-        "Total Area": "15,000 m²",
-        "Villa Size": "450 m²",
-        "Olive Groves": "2 Separate Orchards",
-        "Coastline": "150m Private Access",
-        "Built": "18th Century",
-        "Renovated": "2019"
+        "Grove Area": "6,000 m²",
+        "Olive Trees": "400+",
+        "Water Source": "Natural Springs",
+        "Annual Yield": "1,500L Premium Oil",
+        "Soil Quality": "Prime Mediterranean",
+        "Development": "Flexible Rights"
       },
       images: [
-        "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
         "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        "https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ]
+    },
+    {
+      id: 'Lot5',
+      title: "Future Vineyard",
+      subtitle: "Development Parcel",
+      price: "Coming Soon",
+      location: "Croatian Adriatic Coast",
+      type: "future",
+      description: "Additional terraced land with vineyard potential, offering expansion opportunities for those who understand the value of Croatian terroir.",
+      longDescription: "This pristine parcel represents untapped potential in one of Croatia's most desirable coastal regions. The terraced land offers ideal conditions for vineyard development, with perfect sun exposure, well-draining soil, and proximity to the sea creating optimal growing conditions for premium Croatian wine varieties.",
+      features: ["Vineyard Development Potential", "Sea Access Rights", "Heritage Planning Approved", "Investment Grade Location", "Optimal Terroir", "Flexible Use Rights"],
+      specifications: {
+        "Parcel Size": "5,000 m²",
+        "Elevation": "50-100m above sea",
+        "Slope": "Optimal vineyard grade",
+        "Planning": "Development approved",
+        "Access": "Direct sea access",
+        "Potential": "Premium vineyard"
+      },
+      images: [
+        "https://images.unsplash.com/photo-1504893524553-b855bce32c67?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1487252665478-49b61b47f302?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
       ]
     }
-    // Room for more properties here
   ];
 
   const property = properties.find(p => p.id === id);
@@ -180,6 +227,10 @@ const PropertyDetail = () => {
                         return (<><strong className="font-medium text-stone-800">{property.title}</strong> is an ancient olive grove with trees planted by generations past, offering both agricultural heritage and investment potential in Croatia's golden landscape.</>);
                       case 'lot-3':
                         return (<><strong className="font-medium text-stone-800">{property.title}</strong> is the entire heritage estate featuring the stone villa and both centuries-old olive groves. A once-in-a-lifetime opportunity to own a complete Mediterranean legacy stretching across pristine coastline.</>);
+                      case 'Lot4':
+                        return (<><strong className="font-medium text-stone-800">{property.title}</strong> is a second heritage olive grove with pristine ancient trees and fertile Mediterranean soil, perfect for continued cultivation or thoughtful development.</>);
+                      case 'Lot5':
+                        return (<><strong className="font-medium text-stone-800">{property.title}</strong> is additional terraced land with vineyard potential, offering expansion opportunities for those who understand the value of Croatian terroir.</>);
                       default:
                         return property.description;
                     }
@@ -263,11 +314,11 @@ const PropertyDetail = () => {
                   </h4>
                   <div className="flex flex-col gap-4">
                     <a
-                      href="/get-in-touch"
+                      href="tel:+352621815753"
                       className="w-full btn-estate flex items-center justify-center"
                     >
                       <Phone size={18} className="mr-2" />
-                      Get in touch
+                      Call Now
                     </a>
                     <a
                       href="https://wa.me/352621815753"

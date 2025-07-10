@@ -27,22 +27,23 @@ export default {
     'Terraces': 'Original Stone'
   },
   images: [
-    '/assets/images/orchard/panoramic/heritage-grove-lot2-panoramic-01.jpg',
-    '/assets/images/orchard/overview/heritage-grove-lot2-overview-01.jpg',
-    '/assets/images/orchard/trees/heritage-grove-lot2-trees-01.jpg'
+    // Using placeholder images until orchard photos are available
+    '/placeholder.svg',
+    '/placeholder.svg',
+    '/placeholder.svg'
   ],
   gallery: {
     panoramic: {
-      visible: true,
-      images: ['/assets/images/orchard/panoramic/heritage-grove-lot2-panoramic-01.jpg']
+      visible: false,
+      images: ['/placeholder.svg']
     },
     overview: {
-      visible: true,
-      images: ['/assets/images/orchard/overview/heritage-grove-lot2-overview-01.jpg']
+      visible: false,
+      images: ['/placeholder.svg']
     },
     trees: {
-      visible: true,
-      images: ['/assets/images/orchard/trees/heritage-grove-lot2-trees-01.jpg']
+      visible: false,
+      images: ['/placeholder.svg']
     }
   },
   documentation: [
