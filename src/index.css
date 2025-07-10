@@ -134,6 +134,21 @@
   animation: gentle-sway 4s ease-in-out infinite;
 }
 
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0.05;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 1.4s cubic-bezier(0.4, 0.2, 0.2, 1) both;
+}
+
 /* Texture overlays */
 .stone-texture {
   position: relative;
